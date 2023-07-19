@@ -3,7 +3,7 @@ name: Hello world
 on:
   pull_request:
     types: [opened, reopened, synchronize, labeled]
-    
+
 jobs:
   hello-world:
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
           echo "Hello worldsss"
   
   add-pending-check:
-    if: github.event.action == 'synchronize' && contains(github.event.pull_request.labels.*.name, 'review')
+    if: github.event.action == 'synchronize' && contains(github.event.pull_request.labels.*.name, 'review-app')
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
