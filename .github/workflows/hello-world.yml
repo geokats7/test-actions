@@ -20,5 +20,5 @@ jobs:
       - name: Add pending check until automation test run is finished
         run: |
           curl -H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            --url https://api.github.com/repos/Orfium/${{ github.event.repository.name }}/statuses/${{ github.event.pull_request.head.sha }} \
+            --url https://api.github.com/repos/geokats7/${{ github.event.repository.name }}/statuses/${{ github.event.pull_request.head.sha }} \
             -d '{"state": "pending", "context": "Jenkins Tests", "description": "Waiting for automation-tests results ", "target_url": "https://jenkins.ci-prod.orfium.xyz/view/CATALOG/job/Music_Rights_Cloud/job/Automation_Tests_Pipeline/"}'
