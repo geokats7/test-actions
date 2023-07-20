@@ -13,7 +13,7 @@ jobs:
           echo "Hello worldsss"
   
   add-pending-check:
-    if: github.event.action == 'labeled' && contains(github.event.pull_request.labels.*.name, 'review-app')
+    if: contains(github.event.pull_request.labels.*.name, 'review-app')
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
